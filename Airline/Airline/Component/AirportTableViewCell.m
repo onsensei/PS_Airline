@@ -7,6 +7,7 @@
 //
 
 #import "AirportTableViewCell.h"
+#import "Airport.h"
 
 @implementation AirportTableViewCell
 
@@ -24,12 +25,8 @@
 #pragma mark - Command
 
 - (void)refreshWithDataObject:(id)object {
-//    NSString *prefix = [object valueForKeyPath:@"prefix"];
-//    NSString *icao = [object valueForKeyPath:@"icao"];
-//    NSString *airport_en = [object valueForKeyPath:@"airport_en"];
-    NSString *airport_th = [object valueForKeyPath:@"airport_th"];
-    
-    self.airportLabel.text = airport_th;
+    Airport *airport = object;
+    self.airportLabel.text = airport.airportTh;
 }
 
 @end

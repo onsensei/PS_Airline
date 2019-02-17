@@ -17,6 +17,10 @@
 		506D9DAE22194EED0013A4DC /* AirportTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 506D9DAD22194EED0013A4DC /* AirportTableViewCell.m */; };
 		506D9DB1221959920013A4DC /* Airport.m in Sources */ = {isa = PBXBuildFile; fileRef = 506D9DB0221959920013A4DC /* Airport.m */; };
 		506D9DB422195FD50013A4DC /* FlightTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 506D9DB322195FD50013A4DC /* FlightTableViewCell.m */; };
+		506D9DB722196AB40013A4DC /* AirportResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 506D9DB622196AB40013A4DC /* AirportResponse.m */; };
+		506D9DBA22196AC40013A4DC /* Region.m in Sources */ = {isa = PBXBuildFile; fileRef = 506D9DB922196AC40013A4DC /* Region.m */; };
+		506D9DBE22196AE90013A4DC /* Flight.m in Sources */ = {isa = PBXBuildFile; fileRef = 506D9DBD22196AE90013A4DC /* Flight.m */; };
+		506D9DC122196AFC0013A4DC /* FlightResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 506D9DC022196AFC0013A4DC /* FlightResponse.m */; };
 		99787DB743D2FD724951CB4B /* libPods-Airline.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FBF88505DD73AC78E8080C7A /* libPods-Airline.a */; };
 /* End PBXBuildFile section */
 
@@ -40,6 +44,14 @@
 		506D9DB0221959920013A4DC /* Airport.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Airport.m; sourceTree = "<group>"; };
 		506D9DB222195FD50013A4DC /* FlightTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FlightTableViewCell.h; sourceTree = "<group>"; };
 		506D9DB322195FD50013A4DC /* FlightTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FlightTableViewCell.m; sourceTree = "<group>"; };
+		506D9DB522196AB40013A4DC /* AirportResponse.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AirportResponse.h; sourceTree = "<group>"; };
+		506D9DB622196AB40013A4DC /* AirportResponse.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AirportResponse.m; sourceTree = "<group>"; };
+		506D9DB822196AC40013A4DC /* Region.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Region.h; sourceTree = "<group>"; };
+		506D9DB922196AC40013A4DC /* Region.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Region.m; sourceTree = "<group>"; };
+		506D9DBC22196AE90013A4DC /* Flight.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Flight.h; sourceTree = "<group>"; };
+		506D9DBD22196AE90013A4DC /* Flight.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Flight.m; sourceTree = "<group>"; };
+		506D9DBF22196AFC0013A4DC /* FlightResponse.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FlightResponse.h; sourceTree = "<group>"; };
+		506D9DC022196AFC0013A4DC /* FlightResponse.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FlightResponse.m; sourceTree = "<group>"; };
 		5DCFB1B2BA79DD647F7BEEAC /* Pods-Airline.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Airline.release.xcconfig"; path = "Pods/Target Support Files/Pods-Airline/Pods-Airline.release.xcconfig"; sourceTree = "<group>"; };
 		FBF88505DD73AC78E8080C7A /* libPods-Airline.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Airline.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -77,25 +89,57 @@
 		506D9D92221942F40013A4DC /* Airline */ = {
 			isa = PBXGroup;
 			children = (
+				506D9DC322196B200013A4DC /* Component */,
+				506D9DBB22196ACA0013A4DC /* Model */,
+				506D9DC222196B060013A4DC /* ViewController */,
 				506D9D93221942F40013A4DC /* AppDelegate.h */,
 				506D9D94221942F40013A4DC /* AppDelegate.m */,
-				506D9D96221942F40013A4DC /* ViewController.h */,
-				506D9D97221942F40013A4DC /* ViewController.m */,
 				506D9D99221942F40013A4DC /* Main.storyboard */,
 				506D9D9C221942F50013A4DC /* Assets.xcassets */,
 				506D9D9E221942F50013A4DC /* LaunchScreen.storyboard */,
 				506D9DA1221942F50013A4DC /* Info.plist */,
 				506D9DA2221942F50013A4DC /* main.m */,
-				506D9DA9221943CF0013A4DC /* DetailViewController.h */,
-				506D9DAA221943CF0013A4DC /* DetailViewController.m */,
-				506D9DAC22194EED0013A4DC /* AirportTableViewCell.h */,
-				506D9DAD22194EED0013A4DC /* AirportTableViewCell.m */,
+			);
+			path = Airline;
+			sourceTree = "<group>";
+		};
+		506D9DBB22196ACA0013A4DC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				506D9DB522196AB40013A4DC /* AirportResponse.h */,
+				506D9DB622196AB40013A4DC /* AirportResponse.m */,
+				506D9DB822196AC40013A4DC /* Region.h */,
+				506D9DB922196AC40013A4DC /* Region.m */,
 				506D9DAF221959920013A4DC /* Airport.h */,
 				506D9DB0221959920013A4DC /* Airport.m */,
+				506D9DBF22196AFC0013A4DC /* FlightResponse.h */,
+				506D9DC022196AFC0013A4DC /* FlightResponse.m */,
+				506D9DBC22196AE90013A4DC /* Flight.h */,
+				506D9DBD22196AE90013A4DC /* Flight.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		506D9DC222196B060013A4DC /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				506D9D96221942F40013A4DC /* ViewController.h */,
+				506D9D97221942F40013A4DC /* ViewController.m */,
+				506D9DA9221943CF0013A4DC /* DetailViewController.h */,
+				506D9DAA221943CF0013A4DC /* DetailViewController.m */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		506D9DC322196B200013A4DC /* Component */ = {
+			isa = PBXGroup;
+			children = (
+				506D9DAC22194EED0013A4DC /* AirportTableViewCell.h */,
+				506D9DAD22194EED0013A4DC /* AirportTableViewCell.m */,
 				506D9DB222195FD50013A4DC /* FlightTableViewCell.h */,
 				506D9DB322195FD50013A4DC /* FlightTableViewCell.m */,
 			);
-			path = Airline;
+			path = Component;
 			sourceTree = "<group>";
 		};
 		8339E201BC5E443754B0A499 /* Pods */ = {
@@ -214,9 +258,13 @@
 				506D9DB1221959920013A4DC /* Airport.m in Sources */,
 				506D9D98221942F40013A4DC /* ViewController.m in Sources */,
 				506D9DA3221942F50013A4DC /* main.m in Sources */,
+				506D9DBE22196AE90013A4DC /* Flight.m in Sources */,
+				506D9DC122196AFC0013A4DC /* FlightResponse.m in Sources */,
 				506D9D95221942F40013A4DC /* AppDelegate.m in Sources */,
 				506D9DAE22194EED0013A4DC /* AirportTableViewCell.m in Sources */,
 				506D9DAB221943CF0013A4DC /* DetailViewController.m in Sources */,
+				506D9DBA22196AC40013A4DC /* Region.m in Sources */,
+				506D9DB722196AB40013A4DC /* AirportResponse.m in Sources */,
 				506D9DB422195FD50013A4DC /* FlightTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
