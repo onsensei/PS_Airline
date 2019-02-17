@@ -14,6 +14,7 @@
 		506D9DA0221942F50013A4DC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 506D9D9E221942F50013A4DC /* LaunchScreen.storyboard */; };
 		506D9DA3221942F50013A4DC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 506D9DA2221942F50013A4DC /* main.m */; };
 		506D9DAB221943CF0013A4DC /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 506D9DAA221943CF0013A4DC /* DetailViewController.m */; };
+		506D9DAE22194EED0013A4DC /* AirportTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 506D9DAD22194EED0013A4DC /* AirportTableViewCell.m */; };
 		99787DB743D2FD724951CB4B /* libPods-Airline.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FBF88505DD73AC78E8080C7A /* libPods-Airline.a */; };
 /* End PBXBuildFile section */
 
@@ -31,6 +32,8 @@
 		506D9DA2221942F50013A4DC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		506D9DA9221943CF0013A4DC /* DetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
 		506D9DAA221943CF0013A4DC /* DetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
+		506D9DAC22194EED0013A4DC /* AirportTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AirportTableViewCell.h; sourceTree = "<group>"; };
+		506D9DAD22194EED0013A4DC /* AirportTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AirportTableViewCell.m; sourceTree = "<group>"; };
 		5DCFB1B2BA79DD647F7BEEAC /* Pods-Airline.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Airline.release.xcconfig"; path = "Pods/Target Support Files/Pods-Airline/Pods-Airline.release.xcconfig"; sourceTree = "<group>"; };
 		FBF88505DD73AC78E8080C7A /* libPods-Airline.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Airline.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -79,6 +82,8 @@
 				506D9DA2221942F50013A4DC /* main.m */,
 				506D9DA9221943CF0013A4DC /* DetailViewController.h */,
 				506D9DAA221943CF0013A4DC /* DetailViewController.m */,
+				506D9DAC22194EED0013A4DC /* AirportTableViewCell.h */,
+				506D9DAD22194EED0013A4DC /* AirportTableViewCell.m */,
 			);
 			path = Airline;
 			sourceTree = "<group>";
@@ -199,6 +204,7 @@
 				506D9D98221942F40013A4DC /* ViewController.m in Sources */,
 				506D9DA3221942F50013A4DC /* main.m in Sources */,
 				506D9D95221942F40013A4DC /* AppDelegate.m in Sources */,
+				506D9DAE22194EED0013A4DC /* AirportTableViewCell.m in Sources */,
 				506D9DAB221943CF0013A4DC /* DetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
