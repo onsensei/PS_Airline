@@ -257,6 +257,10 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="erV-zt-YGY" id="nWb-8r-3JK"/>
+                                    <outlet property="delegate" destination="erV-zt-YGY" id="oRD-36-tKY"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -268,6 +272,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="e0w-TO-JB2"/>
                     </view>
+                    <connections>
+                        <outlet property="flightTableView" destination="iR9-fG-wUD" id="HEb-77-im1"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AWb-Iv-vu9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

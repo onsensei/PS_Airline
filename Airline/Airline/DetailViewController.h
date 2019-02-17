@@ -15,6 +15,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, retain) Airport *airport;
 
+@property (weak, nonatomic) IBOutlet UITableView *flightTableView;
+
 @end
 
 NS_ASSUME_NONNULL_END

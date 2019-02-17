@@ -23,10 +23,11 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
+    self.title = @"Thai Flight Info";
+    
     NSString *urlString = @"http://27.254.94.164:30080/api/airport";
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     [manager GET:urlString parameters:nil progress:nil success:^(NSURLSessionTask *task, id responseObject) {
-        NSLog(@"JSON: %@", responseObject);
         self->airportResponse = responseObject;
         [self.airportTableView reloadData];
     } failure:^(NSURLSessionTask *operation, NSError *error) {
