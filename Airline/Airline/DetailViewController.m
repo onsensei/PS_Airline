@@ -13,6 +13,7 @@
 @interface DetailViewController () {
     id flightResponse;
     NSString *mode; // can be = schedule OR status
+    NSTimer* autoSwitchTimer;
 }
 @end
 
@@ -35,9 +36,26 @@
     [manager GET:urlString parameters:param progress:nil success:^(NSURLSessionTask *task, id responseObject) {
         self->flightResponse = responseObject;
         [self.flightTableView reloadData];
+        
+        // start timmer
+        self->autoSwitchTimer = [NSTimer scheduledTimerWithTimeInterval:5
+                                                                 target:self
+                                                               selector:@selector(processAutoSwitchTimer:)
+                                                               userInfo:nil
+                                                                repeats:YES];
     } failure:^(NSURLSessionTask *operation, NSError *error) {
         NSLog(@"Error: %@", error);
     }];
+}
+
+- (void)processAutoSwitchTimer:(NSTimer*)timer {
+    if ([mode isEqualToString:@"schedule"]) {
+        mode = @"status";
+    } else if ([mode isEqualToString:@"status"]) {
+        mode = @"schedule";
+    }
+    
+    [self.flightTableView reloadData];
 }
 
 #pragma mark - UITableViewDataSource
