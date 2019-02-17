@@ -15,6 +15,8 @@
 #import "Airport.h"
 
 @interface ViewController () {
+    id rawAirportResponse;
+    AirportResponse *masterAirportResponse;
     AirportResponse *airportResponse;
 }
 @end
@@ -30,6 +32,8 @@
     NSString *urlString = @"http://27.254.94.164:30080/api/airport";
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     [manager GET:urlString parameters:nil progress:nil success:^(NSURLSessionTask *task, id responseObject) {
+        self->rawAirportResponse = responseObject;
+        self->masterAirportResponse = [self parseAirportResponseWithObject:responseObject];
         self->airportResponse = [self parseAirportResponseWithObject:responseObject];
         [self.airportTableView reloadData];
     } failure:^(NSURLSessionTask *operation, NSError *error) {
@@ -93,15 +97,31 @@
 #pragma mark - UITextFieldDelegate
 
 - (IBAction)searchTextField_EditingChanged:(id)sender {
-//    NSArray *regionList = [airportResponse valueForKeyPath:@"region_list"];
-//    for (int i = 0; i < regionList.count; i++) {
-//        id region = [regionList objectAtIndex:i];
-//    }
-//
-//
-//    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"region_list.airport_list.airport_th CONTAINS %@", self.searchTextField.text];
-//    NSArray *containWithWord = [airportResponse filteredArrayUsingPredicate:predicate];
-//    NSLog(@"%@", containWithWord);
+    if (self.searchTextField.text && self.searchTextField.text.length == 0) {
+        airportResponse = [self parseAirportResponseWithObject:rawAirportResponse];
+        [self.airportTableView reloadData];
+    } else {
+        AirportResponse *newResponse = [[AirportResponse alloc] init];
+        newResponse.lastUpdate = masterAirportResponse.lastUpdate;
+        newResponse.regionList = [[NSMutableArray alloc] init];
+        
+        for (int i = 0; i < masterAirportResponse.regionList.count; i++) {
+            Region *tmpRegion = [masterAirportResponse.regionList objectAtIndex:i];
+            
+            NSPredicate *predicate = [NSPredicate predicateWithFormat:@"(airportTh CONTAINS[cd] %@)", self.searchTextField.text];
+            NSArray *filteredAirportList = [tmpRegion.airportList filteredArrayUsingPredicate:predicate];
+            if (filteredAirportList.count > 0) {
+                Region *newRegion = [[Region alloc] init];
+                newRegion.regionEn = tmpRegion.regionEn;
+                newRegion.regionTh = tmpRegion.regionTh;
+                newRegion.airportList = [[NSMutableArray alloc] initWithArray:filteredAirportList];
+                [newResponse.regionList addObject:newRegion];
+            }
+        }
+        
+        airportResponse = newResponse;
+        [self.airportTableView reloadData];
+    }
 }
 
 #pragma mark - UITableViewDataSource
