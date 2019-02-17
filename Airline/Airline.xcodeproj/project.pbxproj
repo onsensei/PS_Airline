@@ -13,6 +13,7 @@
 		506D9D9D221942F50013A4DC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 506D9D9C221942F50013A4DC /* Assets.xcassets */; };
 		506D9DA0221942F50013A4DC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 506D9D9E221942F50013A4DC /* LaunchScreen.storyboard */; };
 		506D9DA3221942F50013A4DC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 506D9DA2221942F50013A4DC /* main.m */; };
+		506D9DAB221943CF0013A4DC /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 506D9DAA221943CF0013A4DC /* DetailViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,8 @@
 		506D9D9F221942F50013A4DC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		506D9DA1221942F50013A4DC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		506D9DA2221942F50013A4DC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		506D9DA9221943CF0013A4DC /* DetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
+		506D9DAA221943CF0013A4DC /* DetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +70,8 @@
 				506D9D9E221942F50013A4DC /* LaunchScreen.storyboard */,
 				506D9DA1221942F50013A4DC /* Info.plist */,
 				506D9DA2221942F50013A4DC /* main.m */,
+				506D9DA9221943CF0013A4DC /* DetailViewController.h */,
+				506D9DAA221943CF0013A4DC /* DetailViewController.m */,
 			);
 			path = Airline;
 			sourceTree = "<group>";
@@ -144,6 +149,7 @@
 				506D9D98221942F40013A4DC /* ViewController.m in Sources */,
 				506D9DA3221942F50013A4DC /* main.m in Sources */,
 				506D9D95221942F40013A4DC /* AppDelegate.m in Sources */,
+				506D9DAB221943CF0013A4DC /* DetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
