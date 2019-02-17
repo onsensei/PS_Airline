@@ -7,6 +7,7 @@
 //
 
 #import "FlightTableViewCell.h"
+#import <SDWebImage/UIImageView+WebCache.h>
 
 @implementation FlightTableViewCell
 
@@ -32,7 +33,7 @@
 //    NSString *statusColor = [object valueForKeyPath:@"status_color"];
 //    NSString *airlineTh = [object valueForKeyPath:@"airline_th"];
 //    NSString *airlineEn = [object valueForKeyPath:@"airline_en"];
-//    NSString *logo = [object valueForKeyPath:@"logo"];
+    NSString *logo = [object valueForKeyPath:@"logo"];
 //    NSString *icaoAirport = [object valueForKeyPath:@"icao_airport"];
 //    NSString *airportEn = [object valueForKeyPath:@"airport_en"];
     NSString *airportTh = [object valueForKeyPath:@"airport_th"];
@@ -42,8 +43,9 @@
     
     //----------
     
-    //http://27.254.94.164:30080+logo
-    //self.flightLogoImageView
+    NSString *imageUrlString = [NSString stringWithFormat:@"http://27.254.94.164:30080%@", logo];
+    [self.flightLogoImageView sd_setImageWithURL:[NSURL URLWithString:imageUrlString]
+                                placeholderImage:nil];
     self.flightIdLabel.text = flightId;
     
     self.placeTitleLabel.text = @"จาก";
