@@ -29,6 +29,10 @@
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <action selector="searchTextField_EditingChanged:" destination="BYZ-38-t0r" eventType="editingChanged" id="ahw-vR-TZu"/>
+                                            <outlet property="delegate" destination="BYZ-38-t0r" id="E2T-lK-PzZ"/>
+                                        </connections>
                                     </textField>
                                 </subviews>
                                 <color key="backgroundColor" red="0.0" green="0.99143940210000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -124,6 +128,7 @@
                     <navigationItem key="navigationItem" id="AeD-a7-cTi"/>
                     <connections>
                         <outlet property="airportTableView" destination="zvo-qu-juO" id="efx-Mn-BpE"/>
+                        <outlet property="searchTextField" destination="Fn2-By-xMK" id="V7V-hO-5mg"/>
                         <segue destination="erV-zt-YGY" kind="show" identifier="list_to_detail" id="SWu-rU-Hwr"/>
                     </connections>
                 </viewController>

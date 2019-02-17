@@ -7,8 +7,10 @@
 //
 
 #import "ViewController.h"
+#import "DetailViewController.h"
 #import "AFNetworking.h"
 #import "AirportTableViewCell.h"
+#import "Airport.h"
 
 @interface ViewController () {
     id airportResponse;
@@ -30,6 +32,29 @@
     } failure:^(NSURLSessionTask *operation, NSError *error) {
         NSLog(@"Error: %@", error);
     }];
+}
+
+#pragma mark - Navigation
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([[segue identifier] isEqualToString:@"list_to_detail"]) {
+        id rawAirport = sender;
+        DetailViewController *vc = [segue destinationViewController];
+        
+        Airport *airport = [[Airport alloc] init];
+        airport.prefix = [rawAirport valueForKeyPath:@"prefix"];
+        airport.icao = [rawAirport valueForKeyPath:@"icao"];
+        airport.airportEn = [rawAirport valueForKeyPath:@"airport_en"];
+        airport.airportTh = [rawAirport valueForKeyPath:@"airport_th"];
+        
+        vc.airport = airport;
+    }
+}
+
+#pragma mark - UITextFieldDelegate
+
+- (IBAction)searchTextField_EditingChanged:(id)sender {
+    //
 }
 
 #pragma mark - UITableViewDataSource
